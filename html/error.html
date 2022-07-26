@@ -1,15 +1,5 @@
-<html>
-    <head>
-        <title>Go</title>
-        <style>
-            p, h1 {
-                font-family: Arial, Helvetica, sans-serif;
-            }
-        </style>
-    </head>
-    <body>
-        <h1 style="color: red">Error - {{.Code}}</h1>
-        <p>An error occurred while attempting to load page <span style="font-family: monospace;">{{.Page}}</span>. See below.</p>
-        <pre>{{.Output}}</pre>
-    </body>
-</html>
+{{define "content"}}
+    <h1 style="color: red">Error - {{.Error.Code}}</h1>
+    <p>An error occurred while attempting to load page <span style="font-family: monospace;">{{.Error.Page}}</span>. See below.</p>
+    <pre>{{.Error.Output}}</pre>
+{{end}}

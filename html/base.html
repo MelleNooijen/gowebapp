@@ -1,0 +1,15 @@
+{{define "base"}}
+<html>
+    <head>
+        <title>Go Webapp - {{.Title}}</title>
+        <style>
+            p, h1 {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        {{template "content" .}}
+    </body>
+</html>
+{{end}}

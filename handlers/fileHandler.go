@@ -11,7 +11,7 @@ import (
 func FileHandler(w http.ResponseWriter, r *http.Request) {
 	filePath := "./public/direct/" + string(r.URL.Path[len("/direct/"):])
 	if _, err := os.Stat(filePath); errors.Is(err, os.ErrNotExist) {
-		ErrorHandler(w, r, s.IntError{Code: 404, Output: err.Error(), Page: filePath})
+		ErrorHandler(w, r, s.IntError{Code: 404, Output: err.Error(), Page: filePath}, err)
 	} else {
 		http.ServeFile(w, r, filePath)
 	}

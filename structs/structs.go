@@ -3,6 +3,7 @@ package structs
 type PageData struct {
 	Title string
 	User  string
+	Error IntError
 }
 
 // A User class provides a basic structure for a user.
